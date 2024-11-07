@@ -10,23 +10,27 @@ let imgGhost = assets.image `ghost`
 //pc é uma imagem estatica de ghost
 let pc = sprites.create(imgGhost)
 
-//explicação do jogo para o jogador
-game.splash("Bem vindo", "ao dado da morte...")
-game.splash("a morte rolará", "1d10...")
-game.splash("se a rolagem for >=5", "você ganha pontos")
-game.splash("se o resultado for", "menor que 5...")
-game.splash("você morre.")
-game.splash("Acumule o máximo de pontos", "que conseguir.")
-game.splash("Boa sorte.")
-
+function explicacao() {
+    //explicação do jogo para o jogador
+    game.splash("Bem vindo", "ao dado da morte...")
+    game.splash("a morte rolará", "1d10...")
+    game.splash("se a rolagem for >=5", "você ganha pontos")
+    game.splash("se o resultado for", "menor que 5...")
+    game.splash("você morre.")
+    game.splash("Acumule o máximo de pontos", "que conseguir.")
+    game.splash("Boa sorte.")
+}
     
 // Iniciar o jogo
 iniciarJogo()
-
+let primeiraRodada = true
 // Função que controla a lógica do jogo
 function iniciarJogo() {
     let continuarJogo = true
-    
+    if (primeiraRodada) {
+        explicacao()
+        primeiraRodada = false
+    }
     while (continuarJogo) {
         jogo()
         
