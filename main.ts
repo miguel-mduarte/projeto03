@@ -21,9 +21,9 @@ function explicacao() {
     game.splash("Boa sorte.")
 }
     
+let primeiraRodada = true
 // Iniciar o jogo
 iniciarJogo()
-let primeiraRodada = true
 // Função que controla a lógica do jogo
 function iniciarJogo() {
     let continuarJogo = true
